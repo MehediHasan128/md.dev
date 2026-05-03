@@ -12,7 +12,7 @@ const items = [
 
 const Navbar = () => {
   return (
-    <header className="border rounded-full w-full mx-auto xl:mt-5 py-3 px-3 flex justify-center xl:justify-between items-center overflow-hidden backdrop-blur-lg">
+    <header className="border rounded-full w-full mx-auto py-3 px-3 flex justify-center xl:justify-between items-center overflow-hidden backdrop-blur-lg">
       {/* Logo */}
       <div className="relative h-5 xl:h-10 w-[20%] xl:w-[10%] xl:mx-10">
         <Image src="/logo/logo.png" alt="Logo" fill />
