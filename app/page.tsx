@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import About from "@/sections/About";
 import Hero from "@/sections/Hero";
+import Skills from "@/sections/Skills";
 import TechStack from "@/sections/TechStack";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <TechStack />
         <About />
+        <Skills />
       </div>
     </>
   );
