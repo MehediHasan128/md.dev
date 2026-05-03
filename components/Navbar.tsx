@@ -1,5 +1,6 @@
 import Image from "next/image";
 import GooeyNav from "./UI/GooeyNav";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 const items = [
   { label: "Home", href: "#home" },
@@ -11,13 +12,13 @@ const items = [
 
 const Navbar = () => {
   return (
-    <header className="border rounded-full w-[80%] mx-auto mt-5 py-5 px-20 flex justify-between items-center">
+    <header className="border rounded-full w-full mx-auto xl:mt-5 py-3 px-3 flex justify-center xl:justify-between items-center overflow-hidden backdrop-blur-lg">
       {/* Logo */}
-      <div className="relative h-10 w-[10%]">
+      <div className="relative h-5 xl:h-10 w-[20%] xl:w-[10%] xl:mx-10">
         <Image src="/logo/logo.png" alt="Logo" fill />
       </div>
       {/* Navigation */}
-      <nav>
+      <nav className="hidden xl:flex">
         <GooeyNav
           items={items}
           particleCount={15}
@@ -30,7 +31,17 @@ const Navbar = () => {
         />
       </nav>
       {/* Get in touch button */}
-      <div></div>
+      <div className="hidden xl:flex">
+        <a
+          href="#contact"
+          className="border-2 bg-white font-medium text-black rounded-full flex items-center p-0.5 cursor-target active:scale-95 duration-200"
+        >
+          <span className="px-3 font-semibold">Get in Touch</span>
+          <span className="bg-[#5227ff] rounded-full text-white p-3">
+            <MdOutlineArrowOutward />
+          </span>
+        </a>
+      </div>
     </header>
   );
 };
