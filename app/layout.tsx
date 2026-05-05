@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import TargetCursor from "@/components/UI/TargetCursor";
+import GradualBlurMemo from "@/components/UI/GradualBlur";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,6 +70,16 @@ export default function RootLayout({
           hoverDuration={0.2}
         />
         {children}
+        <GradualBlurMemo
+          target="page"
+          position="bottom"
+          height="7rem"
+          strength={2}
+          divCount={5}
+          curve="bezier"
+          exponential
+          opacity={1}
+        />
       </body>
     </html>
   );

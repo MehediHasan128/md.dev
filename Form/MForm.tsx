@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { type SubmitHandler, type FieldValues, useForm, FormProvider } from "react-hook-form";
 
