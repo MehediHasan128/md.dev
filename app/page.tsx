@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import About from "@/sections/About";
 import Hero from "@/sections/Hero";
 import Projects from "@/sections/Projects";
+import Qualifications from "@/sections/Qualifications";
 import Skills from "@/sections/Skills";
 import TechStack from "@/sections/TechStack";
 
@@ -17,6 +18,7 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
+        <Qualifications />
       </div>
     </>
   );
