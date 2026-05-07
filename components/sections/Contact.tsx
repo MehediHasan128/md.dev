@@ -4,13 +4,13 @@ import { IoMailOutline } from "react-icons/io5";
 import { GoDotFill } from "react-icons/go";
 import type { FieldValues } from "react-hook-form";
 import GridBackgroundDemo from "@/components/UI/GridBackgroundDemo";
-import MForm from "@/Form/MForm";
-import MInput from "@/Form/MInput";
-import MTextArea from "@/Form/MTextArea";
 import GlassIcons from "@/components/UI/GlassIcons";
 import Image from "next/image";
 import Container from "@/components/UI/Container";
 import { PinContainer } from "@/components/UI/3d-pin";
+import MForm from "../Form/MForm";
+import MInput from "../Form/MInput";
+import MTextArea from "../Form/MTextArea";
 
 const items = [{ icon: <IoMailOutline />, color: "#5227ff", label: "Conatct" }];
 

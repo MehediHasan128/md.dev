@@ -1,7 +1,7 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { Controller } from "react-hook-form";
-import { cn } from "../lib/utils";
 
 interface TMTextAreaProps {
   name: string;

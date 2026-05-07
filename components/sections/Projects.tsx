@@ -1,6 +1,7 @@
 import Container from "@/components/UI/Container";
 import TiltedCard from "@/components/UI/TiltedCard";
 import { FiArrowUpRight } from "react-icons/fi";
+import SectionHeading from "../UI/SectionHeading";
 
 const Projects = () => {
   return (
@@ -10,27 +11,14 @@ const Projects = () => {
     >
       <Container>
         <div>
-          <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-5 md:gap-0">
-            <div className="md:w-[60%]">
-              <h1 className="text-3xl lg:text-5xl lg:leading-16">
-                <span className="text-lg lg:text-base font-headingStyle">
-                  My Professional
-                </span>{" "}
-                <br />
-                <span className="font-bold">
-                  Background Skills and <br />
-                  Accomplishments
-                </span>
-              </h1>
-            </div>
-            <div className="md:w-[40%] md:text-end">
-              <p className="md:text-sm lg:text-lg">
-                I{`'`}m skilled in HTML, CSS, JavaScript and frameworks like
-                React and Node.js. Ialso have experience with database
-                management using MongoDB.
-              </p>
-            </div>
-          </div>
+          <SectionHeading
+            subTitle="Portfolio Showcase"
+            title={{
+              firstPart: "Selected Projects That",
+              lastPart: "Reflect My Skills",
+            }}
+            description="I enjoy building modern, scalable, and user-friendly web applications. Each project represents my passion for clean design, efficient backend systems, and seamless user experiences using the MERN stack and modern development tools."
+          />
 
           <div className="py-20 lg:py-42 flex flex-col-reverse xl:flex-row gap-10 lg:gap-16 xl:gap-0">
             <div className="xl:w-[50%]">

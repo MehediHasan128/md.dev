@@ -2,6 +2,7 @@ import Container from "@/components/UI/Container";
 import AnimatedContent from "@/components/UI/AnimatedContent";
 import SpotlightCard from "@/components/UI/SpotlightCard";
 import Image from "next/image";
+import SectionHeading from "../UI/SectionHeading";
 
 const educationalQualifications = [
   {
@@ -41,27 +42,14 @@ const Qualifications = () => {
     <section id="qualifications">
       <Container>
         <div>
-          <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-5 md:gap-0">
-            <div className="md:w-[60%]">
-              <h1 className="text-3xl lg:text-5xl lg:leading-16">
-                <span className="text-lg lg:text-base font-headingStyle">
-                  My Professional
-                </span>{" "}
-                <br />
-                <span className="font-bold">
-                  Background Skills and <br />
-                  Accomplishments
-                </span>
-              </h1>
-            </div>
-            <div className="md:w-[40%] md:text-end">
-              <p className="md:text-sm lg:text-lg">
-                I{`'`}m skilled in HTML, CSS, JavaScript and frameworks like
-                React and Node.js. Ialso have experience with database
-                management using MongoDB.
-              </p>
-            </div>
-          </div>
+          <SectionHeading
+            subTitle="Qualification & Journey"
+            title={{
+              firstPart: "Education Experience and",
+              lastPart: "Development Journey",
+            }}
+            description="My academic background and continuous learning journey have helped me build strong problem-solving abilities and practical development skills in modern web technologies."
+          />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 my-20">
             {educationalQualifications.map((item, i) => (
@@ -85,7 +73,12 @@ const Qualifications = () => {
                   <div className="text-black space-y-3 md:space-y-5">
                     <div className="flex flex-col md:flex-row gap-10">
                       <div className="relative w-[30%] mx-auto md:w-[20%] md:mx-0 flex items-center h-20">
-                        <Image src={item.logo} alt={item.institution} fill quality={100} />
+                        <Image
+                          src={item.logo}
+                          alt={item.institution}
+                          fill
+                          quality={100}
+                        />
                       </div>
                       <div className="w-full xl:w-[80%]">
                         <h1 className="md:text-lg font-bold">{item.degree}</h1>

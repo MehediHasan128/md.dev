@@ -4,7 +4,6 @@ import AnimatedContent from "@/components/UI/AnimatedContent";
 import Orb from "@/components/UI/Orb";
 import ShinyText from "@/components/UI/ShinyText";
 import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
-import mehedi from "../public/images/mehedi.png";
 import Image from "next/image";
 import Button from "@/components/UI/Button";
 
@@ -89,7 +88,7 @@ const Hero = () => {
           className="absolute bottom-0 left-1/2 transform -translate-x-1/2 pointer-events-none w-[80%] md:w-[45%] lg:w-[40%] xl:w-[30%] 2xl:max-w-[25%] h-[500px] md:h-[550px] lg:h-[600px] xl:h-[650px] 2xl:h-[720px]"
         >
           <div className="relative w-full h-full">
-            <Image src={mehedi} alt="Mehedi" fill quality={100} />
+            <Image src={"/images/mehedi.png"} alt="Mehedi" fill quality={100} />
           </div>
         </AnimatedContent>
 

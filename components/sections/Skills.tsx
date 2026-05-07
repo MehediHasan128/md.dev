@@ -1,36 +1,40 @@
 import OrbitImages from "@/components/UI/OrbitImages";
 import Container from "@/components/UI/Container";
 import Image from "next/image";
+import SectionHeading from "../UI/SectionHeading";
 
-const frontend = ["/icons/html.png", "/icons/css.png", "/icons/js.png", "/icons/redux.png", "/icons/tailwind.png", "/icons/next2.png", "/icons/figma.png"];
-const backend = ["/icons/express.png", "/icons/node.png", "/icons/mongo.png", "/icons/mongoose.png", "/icons/ts.png", "/icons/jwt.png"];
+const frontend = [
+  "/icons/html.png",
+  "/icons/css.png",
+  "/icons/js.png",
+  "/icons/redux.png",
+  "/icons/tailwind.png",
+  "/icons/next2.png",
+  "/icons/figma.png",
+];
+const backend = [
+  "/icons/express.png",
+  "/icons/node.png",
+  "/icons/mongo.png",
+  "/icons/mongoose.png",
+  "/icons/ts.png",
+  "/icons/jwt.png",
+];
 
 const Skills = () => {
   return (
     <section id="skills">
       <Container>
         <>
-          <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-5 md:gap-0">
-            <div className="md:w-[60%]">
-              <h1 className="text-3xl lg:text-5xl lg:leading-16">
-                <span className="text-lg lg:text-base font-headingStyle">
-                  My Professional
-                </span>{" "}
-                <br />
-                <span className="font-bold">
-                  Background Skills and <br />
-                  Accomplishments
-                </span>
-              </h1>
-            </div>
-            <div className="md:w-[40%] md:text-end">
-              <p className="md:text-sm lg:text-lg">
-                I{`'`}m skilled in HTML, CSS, JavaScript and frameworks like
-                React and Node.js. Ialso have experience with database
-                management using MongoDB.
-              </p>
-            </div>
-                  </div>
+          <SectionHeading
+            subTitle="My Professional"
+            title={{
+              firstPart: "Background Skills and",
+              lastPart: "Accomplishments",
+            }}
+            description="I'm skilled in HTML, CSS, JavaScript and frameworks like React and
+          Node.js. Ialso have experience with database management using MongoDB."
+          />
           <div className="relative my-56 md:my-80">
             <div className="relative h-24 md:h-48 lg:h-40 xl:h-48 w-[30%] lg:w-[20%] xl:w-[15%] 2xl:w-[12%] mx-auto">
               <Image src={"/images/brain.png"} alt="Brain" fill quality={100} />

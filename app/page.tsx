@@ -20,8 +20,9 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
+        <TechStack />
         <Qualifications />
-        <Contact /> 
+        <Contact />
       </div>
       <Footer />
     </>
