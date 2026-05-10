@@ -1,268 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <style>
-      :root {
-        --primary-color: #5227ff;
-        --accent-color: #8365fa;
-        --bg-dark: #060010;
-        --card-bg: #1a1a1e;
-        --field-bg: #2a2a2e;
-        --text-white: #ffffff;
-        --text-gray: #b0b0b0;
-        --border-color: #444;
-      }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Request</title>
+</head>
+<body style="margin: 0; padding: 20px; background-color: #f4f4f4; font-family: Arial, sans-serif;">
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: "Inter", sans-serif;
-      }
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #060010; border-radius: 16px; overflow: hidden; border: 1px solid #444; color: #ffffff;">
+        
+        <tr>
+            <td style="padding: 30px 40px; border-bottom: 4px solid #5227ff;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="70" style="vertical-align: middle;">
+                            <div style="background-color: rgba(82, 39, 255, 0.2); width: 60px; height: 60px; border-radius: 50%; text-align: center; line-height: 60px; color: #5227ff; font-size: 30px;">
+                                ✉
+                            </div>
+                        </td>
+                        <td style="padding-left: 20px; vertical-align: middle;">
+                            <h1 style="margin: 0; font-size: 22px; color: #ffffff;">New Contact Request</h1>
+                            <p style="margin: 5px 0 0; font-size: 14px; color: #b0b0b0;">Someone sent a message through your portfolio.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
 
-      body {
-        background-color: #f4f4f4;
-        padding: 20px;
-      }
+        <tr>
+            <td style="padding: 30px 40px;">
+                <h2 style="color: #5227ff; font-size: 20px; margin-bottom: 20px;">Contact Details</h2>
+                
+                <div style="background-color: #1a1a1e; border: 1px solid #444; border-radius: 12px; padding: 20px;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="padding: 10px 0; color: #b0b0b0; width: 30%; font-size: 14px; border-bottom: 1px solid #333;">Full Name</td>
+                            <td style="padding: 10px 0; color: #ffffff; text-align: right; font-size: 14px; border-bottom: 1px solid #333;">{{USER_NAME}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 0; color: #b0b0b0; font-size: 14px; border-bottom: 1px solid #333;">Email</td>
+                            <td style="padding: 10px 0; color: #8365fa; text-align: right; font-size: 14px; border-bottom: 1px solid #333; font-weight: bold;">{{USER_EMAIL}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 0; color: #b0b0b0; font-size: 14px; border-bottom: 1px solid #333;">Subject</td>
+                            <td style="padding: 10px 0; color: #ffffff; text-align: right; font-size: 14px; border-bottom: 1px solid #333;">{{SUBJECT}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding-top: 15px;">
+                                <p style="color: #b0b0b0; font-size: 14px; margin-bottom: 5px;">Message:</p>
+                                <p style="color: #e0e0e0; font-size: 14px; line-height: 1.5; margin: 0; text-align: justify;">{{MESSAGE}}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
 
-      #container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-      }
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top: 20px;">
+                    <tr>
+                        <td style="background-color: #1a1a1e; border: 1px solid #444; border-radius: 12px; padding: 15px;">
+                            <table width="100%">
+                                <tr>
+                                    <td width="30" style="color: #8365fa; font-size: 20px;">🕒</td>
+                                    <td>
+                                        <h4 style="margin: 0; font-size: 14px; color: #ffffff;">Submitted At</h4>
+                                        <p style="margin: 0; font-size: 12px; color: #b0b0b0;">{{SUBMITTED_AT}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td style="height: 15px;"></td></tr>
+                    <tr>
+                        <td style="background-color: #1a1a1e; border: 1px solid #444; border-radius: 12px; padding: 15px;">
+                            <table width="100%">
+                                <tr>
+                                    <td width="30" style="color: #8365fa; font-size: 20px;">↩️</td>
+                                    <td>
+                                        <h4 style="margin: 0; font-size: 14px; color: #ffffff;">Quick Reply</h4>
+                                        <p style="margin: 0; font-size: 12px; color: #b0b0b0;">Reply directly to this email. Sent to: <span style="color: #8365fa;">{{USER_EMAIL}}</span></p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
 
-      /* Main Card */
-      .formContainer {
-        background-color: var(--bg-dark);
-        color: var(--text-white);
-        width: 100%;
-        max-width: 550px;
-        border-radius: 16px;
-        overflow: hidden;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
+        <tr>
+            <td style="padding: 30px; text-align: center; border-top: 4px solid #5227ff;">
+                <p style="margin: 0; color: #8365fa; font-weight: bold; font-size: 16px;">❤️ Thank you for connecting!</p>
+                <p style="margin: 5px 0 0; color: #b0b0b0; font-size: 12px;">Your Portfolio Contact System</p>
+            </td>
+        </tr>
+    </table>
 
-      /* Reusable Padding Classes */
-      .p-container {
-        padding: 30px 40px;
-      }
-
-      /* Header & Footer Borders */
-      .border-accent {
-        border-bottom: 4px solid var(--primary-color);
-      }
-      .border-top-accent {
-        border-top: 4px solid var(--primary-color);
-      }
-
-      .formHeader {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .headerIcon {
-        font-size: 30px;
-        background-color: rgba(82, 39, 255, 0.2);
-        min-width: 70px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        color: var(--primary-color);
-      }
-
-      .headerContent h1 {
-        font-size: 22px;
-        margin-bottom: 5px;
-      }
-      .headerContent p {
-        font-size: 14px;
-        color: var(--text-gray);
-      }
-
-      .mainFormContainer {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .sectionTitle {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--primary-color);
-      }
-      .sectionTitle i {
-        font-size: 30px;
-      }
-
-      /* Reusable Box Style */
-      .contentBox {
-        background-color: var(--card-bg);
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        padding: 15px;
-      }
-
-      /* Info Rows */
-      .field {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-        border-bottom: 1px solid #333;
-      }
-      .field:last-child {
-        border: 0;
-      }
-      .label {
-        color: var(--text-gray);
-        font-weight: 500;
-        width: 35%;
-      }
-      .value {
-        width: 65%;
-        word-wrap: break-word;
-      }
-      .highlight {
-        color: var(--accent-color);
-        font-weight: 600;
-      }
-
-      /* Status Items */
-      .statusItem {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-      .statusItem i {
-        font-size: 24px;
-        color: var(--accent-color);
-      }
-      .statusItem h4 {
-        font-size: 15px;
-      }
-      .statusItem p {
-        font-size: 13px;
-        color: var(--text-gray);
-      }
-
-      .formFooter {
-        text-align: center;
-        line-height: 1.6;
-      }
-      .footerMainHeading {
-        color: var(--accent-color);
-        font-weight: 600;
-        font-size: 18px;
-      }
-
-      /* Responsive */
-      @media (max-width: 600px) {
-        .p-container {
-          padding: 20px;
-        }
-        .formHeader {
-          flex-direction: column;
-          text-align: center;
-        }
-        .field {
-          flex-direction: column;
-          text-align: left;
-        }
-        .label,
-        .value {
-          width: 100%;
-          text-align: left;
-        }
-        .value {
-          margin-top: 5px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="container">
-      <div class="formContainer">
-        <div class="formHeader p-container border-accent">
-          <div class="headerIcon"><i class="bi bi-envelope-fill"></i></div>
-          <div class="headerContent">
-            <h1>New Contact Request</h1>
-            <p>Someone sent a message through your portfolio.</p>
-          </div>
-        </div>
-
-        <div class="mainFormContainer p-container">
-          <div class="sectionTitle">
-            <i class="bi bi-person-fill"></i>
-            <h2>Contact Details</h2>
-          </div>
-
-          <div class="contentBox">
-            <div class="field">
-              <p class="label">Full Name</p>
-              <p class="value">John Doe</p>
-            </div>
-            <div class="field">
-              <p class="label">Email</p>
-              <p class="value highlight">JohnDoe@gmail.com</p>
-            </div>
-            <div class="field">
-              <p class="label">Subject</p>
-              <p class="value">Project Inquiry</p>
-            </div>
-            <div class="field">
-              <p class="label">Message</p>
-              <p class="value" style="text-align: justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-                eveniet?
-              </p>
-            </div>
-          </div>
-
-          <div class="contentBox statusItem">
-            <i class="bi bi-clock-fill"></i>
-            <div>
-              <h4>Submitted At</h4>
-              <p>May 21, 2026 • 10:45 AM</p>
-            </div>
-          </div>
-
-          <div class="contentBox statusItem">
-            <i class="bi bi-reply-fill"></i>
-            <div>
-              <h4>Quick Reply</h4>
-              <p>
-                Reply directly to this email. Sent to:
-                <span class="highlight">JohnDoe@gmail.com</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="formFooter p-container border-top-accent">
-          <p class="footerMainHeading">
-            <i class="bi bi-heart-fill"></i> Thank you for connecting!
-          </p>
-          <p style="font-size: 12px; color: var(--text-gray)">
-            Your Portfolio Contact System
-          </p>
-        </div>
-      </div>
-    </div>
-  </body>
+</body>
 </html>

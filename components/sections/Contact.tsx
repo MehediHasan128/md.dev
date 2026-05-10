@@ -12,12 +12,19 @@ import MForm from "../Form/MForm";
 import MInput from "../Form/MInput";
 import MTextArea from "../Form/MTextArea";
 import { apiHandler } from "@/utils/apiHandler";
+import { useState } from "react";
+import Loading from "../UI/loading";
 
 const items = [{ icon: <IoMailOutline />, color: "#5227ff", label: "Conatct" }];
 
 const Contact = () => {
+
+  const [loading, setLoading] = useState(false);
+
   const handleEmailSubmit = async (data: FieldValues) => {
+    setLoading(true);
     await apiHandler("contact", { method: "POST", body: data });
+    setLoading(false);
   };
 
   return (
@@ -93,7 +100,7 @@ const Contact = () => {
                     </div>
                     <MInput
                       type="email"
-                      name="email"
+                      name="userEmail"
                       placeholder="example@gmail.com"
                       label="Email Address"
                     />
@@ -108,11 +115,12 @@ const Contact = () => {
                       placeholder="Tell me about your project, idea, or how I can help you..."
                       label="Message"
                     />
-                    <input
+                    <button
                       type="submit"
-                      value="Send Message"
-                      className="rounded-md bg-primary px-10 py-3 cursor-target cursor-pointer"
-                    />
+                      className="rounded-md bg-primary w-52 py-3 cursor-target cursor-pointer"
+                    >
+                      {loading ? <Loading /> : "Send Message"}
+                    </button>
                   </div>
                 </MForm>
               </div>

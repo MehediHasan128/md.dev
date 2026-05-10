@@ -12,10 +12,12 @@ export const sendEmail = async(userEmail: string, sub: string, htmlPage: string)
     },
   });
 
-  await transporter.sendMail({
-    from: config.admin_email,
-    to: userEmail,
+  const result = await transporter.sendMail({
+    from: userEmail,
+    to: config.admin_email,
     subject: sub,
     html: htmlPage,
   });
+
+  return result
 };
