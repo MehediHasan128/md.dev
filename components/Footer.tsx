@@ -50,16 +50,17 @@ const Footer = () => {
               minFontSize={36}
             />
           </div>
+
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-10 md:gap-0 py-16 md:py-20">
-            <div className="space-x-5">
-              {socailMedia.map((item, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5">
+              {socailMedia.map((item, i) => (      
                 <a
                   key={i}
                   href={item.href}
                   target="_blank"
-                  className="border px-5 py-2 md:px-16 md:py-4 text-lg uppercase rounded-full cursor-target hover:shadow-2xl hover:shadow-primary/50 duration-300"
+                  className="border px-5 py-2 md:px-16 md:py-4 text-center text-lg uppercase rounded-full cursor-target hover:shadow-2xl hover:shadow-primary/50 duration-300"
                 >
-                  {item.label}
+                  {item.label}  
                 </a>
               ))}
             </div>
@@ -78,6 +79,7 @@ const Footer = () => {
               </h1>
             </div>
           </div>
+
           <div className="text-center pb-24 leading-16">
             <h1 className="text-5xl font-medium">Thank You</h1>
 

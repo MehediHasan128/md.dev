@@ -48,7 +48,7 @@ const TechStack = () => {
               key={i}
               className="flex items-center gap-3 md:gap-5 2xl:gap-10"
             >
-              <div className="relative h-12 w-5 md:w-10 xl:w-12 2xl:w-16 -skew-2">
+              <div className="relative h-6 2xl:h-12 w-5 md:w-10 xl:w-12 2xl:w-16 -skew-2">
                 <Image src={tech.image} alt={tech.text} fill />
               </div>
               <h1 className="text-sm md:text-base lg:text-xl xl:text-2xl 2xl:text-4xl font-medium -skew-2">

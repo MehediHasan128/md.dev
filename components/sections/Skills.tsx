@@ -23,7 +23,7 @@ const backend = [
 
 const Skills = () => {
   return (
-    <section id="skills">
+    <section id="skills" className="overflow-hidden">
       <Container>
         <>
           <SectionHeading

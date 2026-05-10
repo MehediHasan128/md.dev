@@ -83,12 +83,12 @@ const Projects = () => {
                   </ul>
                 </div>
               </div>
-              <div className="mt-5 space-x-2.5">
+              <div className="mt-5 grid grid-cols-2 md:grid-cols-3 gap-2.5">
                 <a
                   href="https://github.com/MehediHasan128/laivaly-client"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border text-xs md:text-base px-5 py-2 rounded-md hover:shadow-2xl hover:shadow-primary/50 transition-shadow duration-300 cursor-target"
+                  className="border text-center text-xs md:text-base px-5 py-2 rounded-md hover:shadow-2xl hover:shadow-primary/50 transition-shadow duration-300 cursor-target"
                 >
                   Client Repository
                 </a>
@@ -96,7 +96,7 @@ const Projects = () => {
                   href="https://github.com/MehediHasan128/laivaly-server"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border text-xs md:text-base px-5 py-2 rounded-md hover:shadow-2xl hover:shadow-primary/50 transition-shadow duration-300 cursor-target"
+                  className="border text-center text-xs md:text-base px-5 py-2 rounded-md hover:shadow-2xl hover:shadow-primary/50 transition-shadow duration-300 cursor-target"
                 >
                   Server Repository
                 </a>
@@ -104,7 +104,7 @@ const Projects = () => {
                   href="https://client.laivaly.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border text-xs md:text-base px-5 py-2 rounded-md hover:shadow-2xl hover:shadow-primary/50 transition-shadow duration-300 cursor-target"
+                  className="border text-center text-xs md:text-base px-5 py-2 rounded-md hover:shadow-2xl hover:shadow-primary/50 transition-shadow duration-300 cursor-target"
                 >
                   Live Demo
                 </a>

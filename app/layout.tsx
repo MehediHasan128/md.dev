@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import TargetCursor from "@/components/UI/TargetCursor";
 import GradualBlurMemo from "@/components/UI/GradualBlur";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.className} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.className} antialiased`}>
       <body className="min-h-full flex flex-col text-white">
         <TargetCursor
           spinDuration={2}
@@ -70,6 +71,11 @@ export default function RootLayout({
           hoverDuration={0.2}
         />
         {children}
+        <Toaster
+          position="top-center"
+          swipeDirections={["top"]}
+          duration={3000}
+        />
         <GradualBlurMemo
           target="page"
           position="bottom"

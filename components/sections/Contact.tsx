@@ -11,18 +11,19 @@ import { PinContainer } from "@/components/UI/3d-pin";
 import MForm from "../Form/MForm";
 import MInput from "../Form/MInput";
 import MTextArea from "../Form/MTextArea";
+import { apiHandler } from "@/utils/apiHandler";
 
 const items = [{ icon: <IoMailOutline />, color: "#5227ff", label: "Conatct" }];
 
 const Contact = () => {
-  const handleEmailSubmit = (data: FieldValues) => {
-    console.log(data);
+  const handleEmailSubmit = async (data: FieldValues) => {
+    await apiHandler("contact", { method: "POST", body: data });
   };
 
   return (
     <section
       id="contact"
-      className="bg-radial-[at_75%_75%] from-[#130032] to-[#060010] to-75%"
+      className="bg-radial-[at_75%_75%] from-[#130032] to-[#060010] to-75% overflow-hidden"
     >
       <Container>
         <div className="flex flex-col xl:flex-row gap-10 xl:gap-0">
@@ -52,7 +53,7 @@ const Contact = () => {
             </div>
 
             <div className="mt-16 lg:w-[70%] lg:mx-auto xl:mx-0 xl:w-[85%] relative">
-              <div className="relative h-90">
+              <div className="relative h-48 2xl:h-90">
                 <Image
                   src={"/images/world2.png"}
                   alt="WorldMap"
@@ -61,9 +62,7 @@ const Contact = () => {
                 />
               </div>
               <div className="absolute -top-[92px] -right-[75px] md:-top-9 md:right-2 lg:-top-11 lg:-right-1.5 xl:-top-16 xl:-right-8 2xl:-top-7 2xl:right-5">
-                <PinContainer
-                  title="I'm Here"
-                />
+                <PinContainer title="I'm Here" />
               </div>
             </div>
           </div>
