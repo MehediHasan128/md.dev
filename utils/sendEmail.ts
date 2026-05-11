@@ -1,7 +1,12 @@
 import config from "@/config";
 import nodemailer from "nodemailer";
 
-export const sendEmail = async(userEmail: string, sub: string, htmlPage: string) => {
+export const sendEmail = async (
+  userName: string,
+  userEmail: string,
+  userHTMLPage: string,
+  adminHTMLPage: string,
+) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
@@ -12,12 +17,18 @@ export const sendEmail = async(userEmail: string, sub: string, htmlPage: string)
     },
   });
 
-  const result = await transporter.sendMail({
-    from: userEmail,
+  await transporter.sendMail({
+    from: `"${userName}" <${config.admin_email}>`,
     to: config.admin_email,
-    subject: sub,
-    html: htmlPage,
+    replyTo: userEmail,
+    subject: `New Contact Request From ${userName}`,
+    html: userHTMLPage,
   });
 
-  return result
+  await transporter.sendMail({
+    from: `"MH.dev" <${config.admin_email}>`,
+    to: userEmail,
+    subject: "Thank You For Reaching Out",
+    html: adminHTMLPage,
+  });
 };

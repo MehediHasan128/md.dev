@@ -17,18 +17,29 @@ const sendEmailFromUser = async (data: IEmail) => {
     process.cwd(),
     "components/templates/userMail.html",
   );
+  const adminEmailTemplate = path.join(
+    process.cwd(),
+    "components/templates/adminMail.html",
+  );
 
-  let htmlContent = fs.readFileSync(userEmailTemplate, "utf-8");
+  let userHTMLContent = fs.readFileSync(userEmailTemplate, "utf-8");
+  let adminHTMLContent = fs.readFileSync(adminEmailTemplate, "utf-8");
 
-  htmlContent = htmlContent
+  userHTMLContent = userHTMLContent
     .replace(/{{USER_NAME}}/g, userName)
     .replace(/{{USER_EMAIL}}/g, data?.userEmail)
     .replace(/{{SUBJECT}}/g, data?.subject)
     .replace(/{{MESSAGE}}/g, data?.message)
     .replace(/{{SUBMITTED_AT}}/g, new Date().toLocaleString());
-  
-  const result = await sendEmail(data?.userEmail, data?.subject, htmlContent);
-  console.log(result);
+
+  adminHTMLContent = adminHTMLContent.replace(/{{USER_NAME}}/g, userName);
+
+  await sendEmail(
+    userName,
+    data?.userEmail,
+    userHTMLContent,
+    adminHTMLContent,
+  );
 };
 
 export const ContactServices = {
