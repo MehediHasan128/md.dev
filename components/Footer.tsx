@@ -51,7 +51,7 @@ const Footer = () => {
             />
           </div>
 
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-10 md:gap-0 py-16 md:py-20">
+          <div className="flex flex-col xl:flex-row xl:justify-between xl:items-center gap-10 xl:gap-0 py-16 md:py-20">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5">
               {socailMedia.map((item, i) => (      
                 <a

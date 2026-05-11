@@ -83,7 +83,7 @@ const Projects = () => {
                   </ul>
                 </div>
               </div>
-              <div className="mt-5 grid grid-cols-2 md:grid-cols-3 gap-2.5">
+              <div className="mt-5 grid grid-cols-2 md:grid-cols-3 gap-2.5 xl:mr-5">
                 <a
                   href="https://github.com/MehediHasan128/laivaly-client"
                   target="_blank"

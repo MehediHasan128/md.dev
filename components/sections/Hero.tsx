@@ -68,7 +68,9 @@ const Hero = () => {
             </p>
 
             <div className="pointer-events-auto flex justify-center md:justify-between xl:justify-start gap-5 md:mt-20 xl:mt-0 lg:mx-20 xl:mx-0">
-              <Button buttonText="Download CV" />
+              <a href="/resume.pdf" download="MehediHasan.pdf">
+                <Button buttonText="Download Resume" />
+              </a>
               <Button buttonText="Hire Me" className="bg-transparent" />
             </div>
           </div>
